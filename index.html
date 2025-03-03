@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Protocolo EIGRP - Infraestructura de TI NRC-4026</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      body {
+        background-color: #f8f9fa;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      aside {
+        margin: auto;
+        padding: 20px 0;
+        max-width: 500px;
+      }
+      #mindmap {
+        background-color: #fff;
+        display: block;
+        margin: auto;
+        border-radius: 15px;
+        width: 98vw;
+        height: 100vh;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css"
+    />
+  </head>
+  <body>
+    <h1>Actividad Semana 8 - Protocolo EIGRP</h1>
+    <h2>Infraestructura de TI</h2>
+    <aside>
+      <h3>Instrucciones</h3>
+      <ul>
+        <li>Haga clic en los círculos para expandir cada ítem.</li>
+        <li>
+          Use la rueda del mouse o los controles abajo a la derecha para hacer
+          zoom.
+        </li>
+        <li>Arrastre con el mouse para mover el mapa.</li>
+      </ul>
+    </aside>
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script>
+    <script>
+      (() => {
+        setTimeout(() => {
+          const { markmap: x, mm: K } = window,
+            P = new x.Toolbar();
+          P.attach(K);
+          const F = P.render();
+          F.setAttribute("style", "position:absolute;bottom:20px;right:20px"),
+            document.body.append(F);
+        });
+      })();
+    </script>
+    <script>
+      ((b, L, T, D) => {
+        const H = b();
+        window.mm = H.Markmap.create(
+          "svg#mindmap",
+          (L || H.deriveOptions)(D),
+          T
+        );
+      })(
+        () => window.markmap,
+        null,
+        {
+          content: "Protocolo EIGRP",
+          children: [
+            {
+              content: "Caracter&#xed;sticas",
+              children: [
+                {
+                  content: "Protocolo de estado de enlace",
+                  children: [],
+                  payload: { tag: "li", lines: "8,9" },
+                },
+                {
+                  content: "Usa Algoritmo DUAL",
+                  children: [],
+                  payload: { tag: "li", lines: "9,10" },
+                },
+                {
+                  content: "Aut&#xf3;nomo en cada AS",
+                  children: [],
+                  payload: { tag: "li", lines: "10,11" },
+                },
+                {
+                  content: "Soporta IPv4 e IPv6",
+                  children: [],
+                  payload: { tag: "li", lines: "11,13" },
+                },
+              ],
+              payload: { tag: "h2", lines: "7,8" },
+            },
+            {
+              content: "Configuraci&#xf3;n",
+              children: [
+                {
+                  content:
+                    "<code>router eigrp &lt;AS&gt;</code> &#x2192; Activa EIGRP en el router",
+                  children: [],
+                  payload: { tag: "li", lines: "14,15" },
+                },
+                {
+                  content:
+                    "<code>network &lt;red&gt; &lt;wildcard&gt;</code> &#x2192; Configura redes EIGRP",
+                  children: [],
+                  payload: { tag: "li", lines: "15,16" },
+                },
+                {
+                  content:
+                    "<code>passive-interface &lt;int&gt;</code> &#x2192; Evita env&#xed;os innecesarios de paquetes EIGRP",
+                  children: [],
+                  payload: { tag: "li", lines: "16,17" },
+                },
+                {
+                  content:
+                    "<code>show ip eigrp neighbors</code> &#x2192; Verifica vecinos EIGRP",
+                  children: [],
+                  payload: { tag: "li", lines: "17,19" },
+                },
+              ],
+              payload: { tag: "h2", lines: "13,14" },
+            },
+            {
+              content: "Funcionamiento",
+              children: [
+                {
+                  content: "Calcula la mejor ruta basada en su m&#xe9;trica",
+                  children: [],
+                  payload: { tag: "li", lines: "20,21" },
+                },
+                {
+                  content:
+                    "Detecta fallos r&#xe1;pidamente y adapta la topolog&#xed;a",
+                  children: [],
+                  payload: { tag: "li", lines: "21,22" },
+                },
+                {
+                  content:
+                    "Mantiene una tabla de topolog&#xed;a con rutas alternativas",
+                  children: [],
+                  payload: { tag: "li", lines: "22,24" },
+                },
+              ],
+              payload: { tag: "h2", lines: "19,20" },
+            },
+            {
+              content: "Ventajas",
+              children: [
+                {
+                  content: "Convergencia r&#xe1;pida",
+                  children: [],
+                  payload: { tag: "li", lines: "25,26" },
+                },
+                {
+                  content: "Bajo uso de ancho de banda",
+                  children: [],
+                  payload: { tag: "li", lines: "26,27" },
+                },
+                {
+                  content: "Balanceo de carga desigual (Variance)",
+                  children: [],
+                  payload: { tag: "li", lines: "27,28" },
+                },
+                {
+                  content: "Menos uso de CPU que OSPF",
+                  children: [],
+                  payload: { tag: "li", lines: "28,30" },
+                },
+              ],
+              payload: { tag: "h2", lines: "24,25" },
+            },
+            {
+              content: "Protocolos Similares",
+              children: [
+                {
+                  content: "EIGRP vs OSPF",
+                  children: [
+                    {
+                      content:
+                        "<strong>EIGRP</strong>: M&#xe1;s r&#xe1;pido en convergencia, usa m&#xe9;trica compuesta (ancho de banda, retardo, carga y confiabilidad).",
+                      children: [],
+                      payload: { tag: "li", lines: "32,33" },
+                    },
+                    {
+                      content:
+                        "<strong>OSPF</strong>: M&#xe1;s escalable en redes grandes, usa m&#xe9;tricas basadas en costo.",
+                      children: [],
+                      payload: { tag: "li", lines: "33,35" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "31,32" },
+                },
+                {
+                  content: "EIGRP vs RIP",
+                  children: [
+                    {
+                      content:
+                        "<strong>EIGRP</strong>: Soporta balanceo de carga desigual y convergencia r&#xe1;pida.",
+                      children: [],
+                      payload: { tag: "li", lines: "36,37" },
+                    },
+                    {
+                      content:
+                        "<strong>RIP</strong>: Lento en convergencia y usa solo el <strong>n&#xfa;mero de saltos</strong> como m&#xe9;trica.",
+                      children: [],
+                      payload: { tag: "li", lines: "37,38" },
+                    },
+                  ],
+                  payload: { tag: "h3", lines: "35,36" },
+                },
+              ],
+              payload: { tag: "h2", lines: "30,31" },
+            },
+          ],
+          payload: { tag: "h1", lines: "5,6" },
+        },
+        { initialExpandLevel: 2 }
+      );
+    </script>
+  </body>
+</html>
